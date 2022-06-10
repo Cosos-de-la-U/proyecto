@@ -50,6 +50,7 @@ namespace ApiAgiles.Controllers
             try
             {
                 dbContext.Configuration.ProxyCreationEnabled = false;
+                dbContext.Configuration.LazyLoadingEnabled = false;
                 var lAlumnos = dbContext.Usuario
                                             .Include(u => u.Aula1)
                                             .Where(u => u.Tipo == 1 && u.Aula1.Nombre == nombre && u.Aula1.Seccion == seccion)
