@@ -39,18 +39,29 @@ namespace PlayerUI.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Porcentaje = new System.Windows.Forms.Label();
+            this.cbxTrimestre = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.cbxTrimestre);
+            this.panel1.Controls.Add(this.Porcentaje);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBox3);
@@ -167,29 +178,11 @@ namespace PlayerUI.Forms
             this.Alumno,
             this.Materia,
             this.Nota});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 155);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 215);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(854, 443);
+            this.dataGridView1.Size = new System.Drawing.Size(854, 383);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(606, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Asignatura";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(611, 106);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(255, 33);
-            this.comboBox1.TabIndex = 0;
             // 
             // Alumno
             // 
@@ -211,6 +204,86 @@ namespace PlayerUI.Forms
             this.Nota.Name = "Nota";
             this.Nota.Width = 76;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(606, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Asignatura";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(611, 106);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(255, 33);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(305, 173);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Trimestre";
+            // 
+            // Porcentaje
+            // 
+            this.Porcentaje.AutoSize = true;
+            this.Porcentaje.Location = new System.Drawing.Point(634, 173);
+            this.Porcentaje.Name = "Porcentaje";
+            this.Porcentaje.Size = new System.Drawing.Size(84, 25);
+            this.Porcentaje.TabIndex = 12;
+            this.Porcentaje.Text = "Trimestre";
+            // 
+            // cbxTrimestre
+            // 
+            this.cbxTrimestre.FormattingEnabled = true;
+            this.cbxTrimestre.Items.AddRange(new object[] {
+            "Primero",
+            "Segundo",
+            "Tercero"});
+            this.cbxTrimestre.Location = new System.Drawing.Point(385, 170);
+            this.cbxTrimestre.Name = "cbxTrimestre";
+            this.cbxTrimestre.Size = new System.Drawing.Size(199, 33);
+            this.cbxTrimestre.TabIndex = 13;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(733, 170);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 33);
+            this.numericUpDown1.TabIndex = 15;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(695, 37);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(171, 38);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Buscar alumnos";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // IngresoDeNotasAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -225,6 +298,7 @@ namespace PlayerUI.Forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +320,10 @@ namespace PlayerUI.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Alumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
+        private System.Windows.Forms.ComboBox cbxTrimestre;
+        private System.Windows.Forms.Label Porcentaje;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button4;
     }
 }

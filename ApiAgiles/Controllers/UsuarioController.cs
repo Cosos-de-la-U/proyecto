@@ -8,6 +8,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using ApiAgiles.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.Entity;
 
 namespace ApiAgiles.Controllers
 {
@@ -35,6 +41,39 @@ namespace ApiAgiles.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, resp.Message);
             }
             return Request.CreateResponse(HttpStatusCode.OK, resp);
+        }
+        [Route("api/Usuario/Notas")]
+        [HttpGet]
+        public HttpResponseMessage GetUsuariosNotas(string nombre, string seccion)
+        {
+            Model1 dbContext = new Model1();
+            try
+            {
+                dbContext.Configuration.ProxyCreationEnabled = false;
+                var lAlumnos = dbContext.Usuario
+                                            .Include(u => u.Aula1)
+                                            .Where(u => u.Tipo == 1 && u.Aula1.Nombre == nombre && u.Aula1.Seccion == seccion)
+                                            .ToList();
+                
+                if (lAlumnos.Count() == 0)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No hay docentes registrados");
+                }
+
+                var result =  new Response
+                {
+                    IsSuccess = true,
+                    Result = lAlumnos,
+                    Message = "Docentes encontrados"
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex.InnerException.Message);
+            }
+
         }
         [Route("api/Usuario/Docentes")]
         [HttpGet]
