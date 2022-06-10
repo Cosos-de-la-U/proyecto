@@ -17,6 +17,24 @@ namespace PlayerUI.Forms
         {
             //comboBox3 = new 
             InitializeComponent();
+            initStuff();
+
+
+        }
+        public async void initStuff()
+        {
+            var response = await new Services.ApiService().GetAll<Aula>("Aula");
+            if (response.IsSuccess)
+            {
+                List<Aula> AULAS = (List<Aula>)response.Result;
+                foreach(var item in AULAS){
+                    comboBox1.Items.Add(item.Nombre.ToString());
+                    comboBox2.Items.Add(item.Seccion.ToString());
+
+                }
+                comboBox1.SelectedIndex = 0;
+                comboBox2.SelectedIndex = 0;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
